@@ -5,7 +5,7 @@ foreach (var file in Directory.GetFiles(Path.Combine("data", "inbox"), "*.json")
     Console.WriteLine(Path.GetFileName(file));
 
     PortalRequest request;
-    try { request = Storage.Read<PortalRequest>(file); }
+    try { request = Storage.Read(file, StorageContext.Default.PortalRequest); }
     catch (JsonException ex)
     {
         Console.WriteLine($"  rejected: {ex.Message}");

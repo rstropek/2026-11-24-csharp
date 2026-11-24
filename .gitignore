@@ -27,3 +27,6 @@ coverage*.xml
 # OS
 .DS_Store
 Thumbs.db
+
+# Source generator output (EmitCompilerGeneratedFiles), regenerated on every build
+Generated/

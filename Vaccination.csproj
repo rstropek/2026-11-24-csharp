@@ -8,5 +8,18 @@
          CS8509: a case has no arm at all.
          CS8846: a case only has arms with a `when` guard, so some values fall through. -->
     <WarningsAsErrors>$(WarningsAsErrors);CS8509;CS8846</WarningsAsErrors>
+    <!-- JSON goes through the source-generated StorageContext only. Without the
+         reflection fallback, a type that isn't registered there fails loudly
+         instead of silently being serialized via reflection. -->
+    <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
+    <!-- Write the source generator's output to disk so it can be read in the
+         editor: Generated/System.Text.Json.SourceGeneration/.../StorageContext.*.g.cs -->
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <!-- These files are only a copy for reading; the compiler already includes
+         the generator output. Compiling them again would define everything twice. -->
+    <Compile Remove="Generated/**" />
+  </ItemGroup>
 </Project>
