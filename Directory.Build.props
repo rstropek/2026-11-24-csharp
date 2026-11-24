@@ -1,0 +1,14 @@
+<Project>
+  <!-- Shared settings for every sample project in this repo.
+       C# 15 is the default language version for net11.0 in the .NET 11 SDK,
+       so no <LangVersion> is needed (only the memory-safety preview needs it). -->
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Invariant culture everywhere, so number/date output matches the docs on any
+         machine locale (e.g. "4.20" and "24,000", not "4,20" / "24.000" on de-AT). -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+</Project>
