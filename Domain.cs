@@ -25,3 +25,7 @@ sealed record Person(string InsuranceNumber, string Name, DateOnly BirthDate, bo
 }
 
 sealed record VaccinationRecord(string InsuranceNumber, Vaccine Vaccine, DateOnly Date);
+
+readonly record struct Slot(DateOnly Date, TimeOnly Time, int Booth);
+sealed record Patient(Person Person, Vaccine[] Vaccines);
+sealed record Appointment(string Email, Slot Start, Patient[] Patients);

@@ -13,6 +13,7 @@ using System.Text.Json.Serialization.Metadata;
     RespectNullableAnnotations = true)]
 [JsonSerializable(typeof(PortalRequest))]
 [JsonSerializable(typeof(List<VaccinationRecord>))]
+[JsonSerializable(typeof(List<Appointment>))]
 internal partial class StorageContext : JsonSerializerContext;
 
 public static class Storage
