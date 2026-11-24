@@ -12,6 +12,7 @@ using System.Text.Json.Serialization.Metadata;
     RespectRequiredConstructorParameters = true,
     RespectNullableAnnotations = true)]
 [JsonSerializable(typeof(PortalRequest))]
+[JsonSerializable(typeof(List<VaccinationRecord>))]
 internal partial class StorageContext : JsonSerializerContext;
 
 public static class Storage

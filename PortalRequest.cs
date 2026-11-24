@@ -5,7 +5,15 @@ sealed record PortalPerson(
     DateOnly BirthDate, 
     string InsuranceNumber, 
     string[] Vaccines, 
-    bool RiskFactors = false);
+    bool RiskFactors = false)
+{
+    public Person ToPerson() => new(
+        InsuranceNumber,
+        Name,
+        BirthDate,
+        RiskFactors
+    );
+}
 
 sealed record SingleRequest(string Email, PortalPerson Person);
 sealed record FamilyRequest(string Email, PortalPerson[] Members);

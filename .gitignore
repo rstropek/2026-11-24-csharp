@@ -30,3 +30,5 @@ Thumbs.db
 
 # Source generator output (EmitCompilerGeneratedFiles), regenerated on every build
 Generated/
+
+requirements.md
